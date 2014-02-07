@@ -1,0 +1,12 @@
+			int count = 0;
+			struct Node prevNode = *nodeList.firstNode;
+			while(count<numberOfItems)
+			{
+				printf("Loop nr. %d\n", count);
+				prevNode = *prevNode.nextNode;
+				++count;
+			}
+			printf("Test4\n");
+			printf("Laatste waarde: %d\n", nodeList.lastNode->value);
+			newNode.previousNode = &prevNode;
+			newNode.previousNode->nextNode = &newNode;
