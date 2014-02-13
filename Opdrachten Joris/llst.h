@@ -1,5 +1,6 @@
 	void llist_show();
 	void llist_add(int * val);
+	void llist_add_on_place(int * place, int * val);
 	void llist_remove(int val);
 	void llist_clear();
 	int llist_nrItems();

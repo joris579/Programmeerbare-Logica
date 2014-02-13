@@ -9,7 +9,9 @@
 	int llist_nrItems();
 	char llist_excist();
 	void llist_copy();
+	
 	typedef struct Node node_type;
+	
 	struct Node
 	{
 		struct Node * previousNode;
@@ -25,6 +27,7 @@
 	};
 
 	struct NodeList nodeList;
+	
 	void llist_show()
 	{
 		struct Node * walker = nodeList.firstNode;
@@ -68,6 +71,72 @@
    		    list->lastNode = Node;
     	}
     list->count++;
+	}
+
+	void llist_add_on_place(int * place, int * val)
+	{
+		if (*place > nodeList.count || *place <= 0 || llist_nrItems()==0)
+		{
+			
+		}
+		else{
+		struct NodeList * list;
+		list = &nodeList;
+		node_type * Node;
+		printf("%s,%d\n","I am ",*place );
+  		Node = calloc (1, sizeof (node_type));
+    	
+    	if (! Node) 
+    	{
+      	  printf("Allocating memmory failed!\n");
+   		}
+   		
+   		Node->value = val;
+    	
+    	if (*place == 1)    	
+    	{
+    		printf("%s\n","I came at else if place == 1" );
+    		Node->previousNode = NULL;
+    		Node->nextNode = nodeList.firstNode;
+        	nodeList.firstNode = Node;
+
+    	}
+
+    	else if (list->lastNode) 
+    	{
+			struct Node * walker = nodeList.firstNode;
+			struct Node * previousWalker = nodeList.firstNode;    		
+
+			for (int i = 1; 1 == 1; ++i)
+			{
+				printf("%s,%d,%d\n","In loop i= and place = ",i,*place );
+				if (i == *place)
+				{
+					if (walker==nodeList.lastNode)
+					{
+						printf("%s\n","I AM ZE LAST NODE" );
+						walker->nextNode = Node;
+						nodeList.lastNode = Node;
+						Node->previousNode = walker;
+					}
+					else
+					{
+						printf("%s\n","I AM ZE ELSE NODE");
+						printf("%s,%d\n","Walker value = ",*walker->value );
+						Node->nextNode = walker;
+						walker->previousNode = Node;
+						previousWalker->nextNode = Node;
+						Node->previousNode = previousWalker;
+					}
+					break;
+				}
+				previousWalker = walker;
+				walker = walker->nextNode;
+			}
+    	}
+
+    list->count++;
+    }		
 	}
 
 	void llist_remove(int val)
@@ -153,6 +222,8 @@
 		int c = 214;
 		int d = 1234;
 		int e = 5005;
+		int f = 69;
+		int place = 3;
 		printf("---------------\n|** Excist ***|\n---------------\n");
 		printf("%d\n", llist_excist());
 		printf("---------------\n|*** Begin ***|\n---------------\n");
@@ -166,6 +237,10 @@
 		//printf("Derde waarde: %d\n", *nodeList.firstNode->nextNode->nextNode->value);
 		printf("---------------\n|*No of items*|\n---------------\n");
 		printf("%d\n", llist_nrItems());
+		printf("---------------\n|**Print func*|\n---------------\n");
+		llist_show();
+		printf("---------------\n|*Add on place|\n---------------\n");
+		llist_add_on_place(&place,&f);
 		printf("---------------\n|**Print func*|\n---------------\n");
 		llist_show();
 		printf("---------------\n|**Delet func*|\n---------------\n");
