@@ -138,7 +138,8 @@
 	{
 		struct Node * walker = nodeList.firstNode;
 		struct Node *previousWalker = nodeList.firstNode;
-		while(1)
+		int i = 0;
+		while(i<=llist_nrItems())
 		{
 			if (*walker->value==val)
 			{
@@ -163,6 +164,7 @@
 			}
 			previousWalker = walker;
 			walker = walker->nextNode;
+			++i;
 		}
 	}
 

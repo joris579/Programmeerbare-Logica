@@ -296,7 +296,7 @@
 			"file": "llst.c",
 			"settings":
 			{
-				"buffer_size": 5284,
+				"buffer_size": 5024,
 				"line_ending": "Unix",
 				"name": "llst.c"
 			}
@@ -452,7 +452,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -696,15 +696,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5284,
+						"buffer_size": 5024,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1252,
-								1205
+								1090,
+								1090
 							]
 						],
 						"settings":
@@ -714,10 +714,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 925.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -747,7 +747,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
