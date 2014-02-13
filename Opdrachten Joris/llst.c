@@ -95,7 +95,6 @@
     	
     	if (*place == 1)    	
     	{
-    		printf("%s\n","I came at else if place == 1" );
     		Node->previousNode = NULL;
     		Node->nextNode = nodeList.firstNode;
         	nodeList.firstNode = Node;
@@ -109,20 +108,16 @@
 
 			for (int i = 1; 1 == 1; ++i)
 			{
-				printf("%s,%d,%d\n","In loop i= and place = ",i,*place );
 				if (i == *place)
 				{
 					if (walker==nodeList.lastNode)
 					{
-						printf("%s\n","I AM ZE LAST NODE" );
 						walker->nextNode = Node;
 						nodeList.lastNode = Node;
 						Node->previousNode = walker;
 					}
 					else
 					{
-						printf("%s\n","I AM ZE ELSE NODE");
-						printf("%s,%d\n","Walker value = ",*walker->value );
 						Node->nextNode = walker;
 						walker->previousNode = Node;
 						previousWalker->nextNode = Node;
